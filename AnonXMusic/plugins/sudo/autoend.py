@@ -15,10 +15,10 @@ async def auto_end_stream(_, message: Message):
     if state == "enable":
         await autoend_on()
         await message.reply_text(
-            "» ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴇɴᴀʙʟᴇᴅ.\n\nᴀssɪsᴛᴀɴᴛ ᴡɪʟʟ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀғᴛᴇʀ ғᴇᴡ ᴍɪɴs ᴡʜᴇɴ ɴᴏ ᴏɴᴇ ɪs ʟɪsᴛᴇɴɪɴɢ."
+            "» ᴛᴜ̛̣ Đᴏ̣̂ɴɢ ᴋᴇ̂́ᴛ ᴛʜᴜ́ᴄ sᴛʀᴇᴀᴍ Đᴀ̃ ʙᴀ̣̂ᴛ.\n\nᴛʀᴏ̛̣ ʟʏ́ sᴇ̃ ᴛᴜ̛̣ Đᴏ̣̂ɴɢ ʀᴏ̛̀ɪ ᴋʜᴏ̉ɪ ᴠɪᴅᴇᴏᴄʜᴀᴛ sᴀᴜ ᴠᴀ̀ɪ ᴘʜᴜ́ᴛ ᴋʜɪ ᴋʜᴏ̂ɴɢ ᴄᴏ́ ᴀɪ ɴɢʜᴇ."
         )
     elif state == "disable":
         await autoend_off()
-        await message.reply_text("» ᴀᴜᴛᴏ ᴇɴᴅ sᴛʀᴇᴀᴍ ᴅɪsᴀʙʟᴇᴅ.")
+        await message.reply_text("» ᴛᴜ̛̣ Đᴏ̣̂ɴɢ ᴋᴇ̂́ᴛ ᴛʜᴜ́ᴄ sᴛʀᴇᴀᴍ Đᴀ̃ ᴛᴀ̆́ᴛ.")
     else:
         await message.reply_text(usage)
