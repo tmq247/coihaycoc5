@@ -49,7 +49,7 @@ async def update_(client, message, _):
         return await response.edit(_["server_4"])
     except InvalidGitRepositoryError:
         return await response.edit(_["server_5"])
-    to_exc = f"git fetch origin {config.UPSTREAM_BRANCH} &> /dev/null"
+    to_exc = f"git tìm nạp nguồn gốc {config.UPSTREAM_BRANCH} &> /dev/null"
     os.system(to_exc)
     await asyncio.sleep(7)
     verification = ""
@@ -65,12 +65,12 @@ async def update_(client, message, _):
     )
     for info in repo.iter_commits(f"HEAD..origin/{config.UPSTREAM_BRANCH}"):
         updates += f"<b>➣ #{info.count()}: <a href={REPO_}/commit/{info}>{info.summary}</a> ʙʏ -> {info.author}</b>\n\t\t\t\t<b>➥ ᴄᴏᴍᴍɪᴛᴇᴅ ᴏɴ :</b> {ordinal(int(datetime.fromtimestamp(info.committed_date).strftime('%d')))} {datetime.fromtimestamp(info.committed_date).strftime('%b')}, {datetime.fromtimestamp(info.committed_date).strftime('%Y')}\n\n"
-    _update_response_ = "<b>ᴀ ɴᴇᴡ ᴜᴩᴅᴀᴛᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ʙᴏᴛ !</b>\n\n➣ ᴩᴜsʜɪɴɢ ᴜᴩᴅᴀᴛᴇs ɴᴏᴡ\n\n<b><u>ᴜᴩᴅᴀᴛᴇs:</u></b>\n\n"
+    _update_response_ = "<b>ᴄᴏ́ ᴄᴀ̣̂ᴘ ɴʜᴀ̣̂ᴛ ᴍᴏ̛́ɪ ᴄʜᴏ ʙᴏᴛ !</b>\n\n➣ Đᴀɴɢ ᴄᴀ̣̂ᴘ ɴʜᴀ̣̂ᴛ ɴɢᴀʏ ʙᴀ̂ʏ ɢɪᴏ̛̀\n\n<b><u>cα̣̂ρ ηнα̣̂т :</u></b>\n\n"
     _final_updates_ = _update_response_ + updates
     if len(_final_updates_) > 4096:
         url = await AnonyBin(updates)
         nrs = await response.edit(
-            f"<b>ᴀ ɴᴇᴡ ᴜᴩᴅᴀᴛᴇ ɪs ᴀᴠᴀɪʟᴀʙʟᴇ ғᴏʀ ᴛʜᴇ ʙᴏᴛ !</b>\n\n➣ ᴩᴜsʜɪɴɢ ᴜᴩᴅᴀᴛᴇs ɴᴏᴡ\n\n<u><b>ᴜᴩᴅᴀᴛᴇs :</b></u>\n\n<a href={url}>ᴄʜᴇᴄᴋ ᴜᴩᴅᴀᴛᴇs</a>"
+            f"<b>ᴄᴏ́ ᴄᴀ̣̂ᴘ ɴʜᴀ̣̂ᴛ ᴍᴏ̛́ɪ ᴄʜᴏ ʙᴏᴛ !</b>\n\n➣ Đᴀɴɢ ᴄᴀ̣̂ᴘ ɴʜᴀ̣̂ᴛ ɴɢᴀʏ ʙᴀ̂ʏ ɢɪᴏ̛̀\n\n<u><b>cα̣̂ρ ηнα̣̂т :</b></u>\n\n<a href={url}>ᴄʜᴇᴄᴋ ᴜᴩᴅᴀᴛᴇs</a>"
         )
     else:
         nrs = await response.edit(_final_updates_, disable_web_page_preview=True)
@@ -112,13 +112,13 @@ async def update_(client, message, _):
 
 @app.on_message(filters.command(["restart"]) & SUDOERS)
 async def restart_(_, message):
-    response = await message.reply_text("ʀᴇsᴛᴀʀᴛɪɴɢ...")
+    response = await message.reply_text("кнσ̛̉ι đσ̣̂ηg ℓα̣ι...")
     ac_chats = await get_active_chats()
     for x in ac_chats:
         try:
             await app.send_message(
                 chat_id=int(x),
-                text=f"{app.mention} ɪs ʀᴇsᴛᴀʀᴛɪɴɢ...\n\nʏᴏᴜ ᴄᴀɴ sᴛᴀʀᴛ ᴩʟᴀʏɪɴɢ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 15-20 sᴇᴄᴏɴᴅs.",
+                text=f"{app.mention} đαηg кнσ̛̉ι đσ̣̂ηg ℓα̣ι...\n\nʙᴀ̣ɴ ᴄᴏ́ ᴛʜᴇ̂̉ ʙᴀ̆́ᴛ Đᴀ̂̀ᴜ ᴍᴏ̛̉ ʟᴀ̣ɪ sᴀᴜ 𝟷𝟻-𝟸𝟶 ɢɪᴀ̂ʏ.",
             )
             await remove_active_chat(x)
             await remove_active_video_chat(x)
@@ -132,6 +132,6 @@ async def restart_(_, message):
     except:
         pass
     await response.edit_text(
-        "» ʀᴇsᴛᴀʀᴛ ᴘʀᴏᴄᴇss sᴛᴀʀᴛᴇᴅ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ғᴏʀ ғᴇᴡ sᴇᴄᴏɴᴅs ᴜɴᴛɪʟ ᴛʜᴇ ʙᴏᴛ sᴛᴀʀᴛs..."
+        "» ǫᴜʏ ᴛʀɪ̀ɴʜ ᴋʜᴏ̛̉ɪ Đᴏ̣̂ɴɢ ʟᴀ̣ɪ Đᴀ̃ ʙᴀ̆́ᴛ Đᴀ̂̀ᴜ, ᴠᴜɪ ʟᴏ̀ɴɢ ᴄʜᴏ̛̀ ᴠᴀ̀ɪ ɢɪᴀ̂ʏ Đᴇ̂́ɴ ᴋʜɪ ʙᴏᴛ ʙᴀ̆́ᴛ Đᴀ̂̀ᴜ..."
     )
     os.system(f"kill -9 {os.getpid()} && bash start")
