@@ -14,7 +14,7 @@ from AnonXMusic.utils.database import (
 
 @app.on_message(filters.command(["activevc", "activevoice"]) & SUDOERS)
 async def activevc(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
+    mystic = await message.reply_text("» ɴʜᴀ̣̂ɴ ᴅᴀɴʜ sᴀ́ᴄʜ ᴛʀᴏ̀ ᴄʜᴜʏᴇ̣̂ɴ ɢɪᴏ̣ɴɢ ɴᴏ́ɪ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ...")
     served_chats = await get_active_chats()
     text = ""
     j = 0
@@ -36,17 +36,17 @@ async def activevc(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
+        await mystic.edit_text(f"» ᴋʜᴏ̂ɴɢ ᴄᴏ́ ᴛʀᴏ̀ ᴄʜᴜʏᴇ̣̂ɴ ɢɪᴏ̣ɴɢ ɴᴏ́ɪ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs :</b>\n\n{text}",
+            f"<b>» ᴅᴀɴʜ sᴀ́ᴄʜ ᴛʀᴏ̀ ᴄʜᴜʏᴇ̣̂ɴ ɢɪᴏ̣ɴɢ ɴᴏ́ɪ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ ʜɪᴇ̣̂ɴ ᴛᴀ̣ɪ :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
 
 
 @app.on_message(filters.command(["activev", "activevideo"]) & SUDOERS)
 async def activevi_(_, message: Message):
-    mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ʟɪsᴛ...")
+    mystic = await message.reply_text("» ɴʜᴀ̣̂ɴ ᴅᴀɴʜ sᴀ́ᴄʜ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ...")
     served_chats = await get_active_video_chats()
     text = ""
     j = 0
@@ -68,9 +68,9 @@ async def activevi_(_, message: Message):
         except:
             continue
     if not text:
-        await mystic.edit_text(f"» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs ᴏɴ {app.mention}.")
+        await mystic.edit_text(f"» ᴋʜᴏ̂ɴɢ ᴄᴏ́ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ {app.mention}.")
     else:
         await mystic.edit_text(
-            f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs :</b>\n\n{text}",
+            f"<b>» ᴅᴀɴʜ sᴀ́ᴄʜ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ Đᴀɴɢ ʜᴏᴀ̣ᴛ Đᴏ̣̂ɴɢ :</b>\n\n{text}",
             disable_web_page_preview=True,
         )
