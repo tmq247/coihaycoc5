@@ -337,7 +337,7 @@ async def authusers_mar(client, CallbackQuery, _):
                         ),
                         InlineKeyboardButton(
                             text=_["CLOSE_BUTTON"],
-                            callback_data=f"close",
+                            callback_data=f"đóng",
                         ),
                     ]
                 ]
