@@ -98,7 +98,7 @@ queue_4 : "➲ <b>Đã thêm vào danh sách chờ tại địa điểm #{0}\n\n
 queue_5 : "Chỉ có một clip trong hàng đợi.\n\nThêm các clip khác để kiểm tra danh sách."
 queue_6 : "<b>🕚 Thời lượng:</b> Không xác định thời lượng phát trực tuyến\n\nNhấp vào nút bên dưới để xem hàng đợi đầy đủ."
 queue_7 : "\nNhấp vào nút bên dưới để xem danh sách chờ đầy đủ.
-queue_8 : "<b> Người chơi {0}</b>\n\n🎄 <b>Hiện đang phát trực tuyến cho :</b> {1}\n\n🔗 <b>Loại luồng:</b> {2}\ n 🥀 <b>Người yêu cầu:</b> {3}\n{4}"
+queue_8 : "<b> Người chơi {0}</b>\n\n🎄 <b>Hiện đang phát trực tuyến cho :</b> {1}\n\n🔗 <b>Loại luồng:</b> {2}\n 🥀 <b>Người yêu cầu:</b> {3}\n{4}"
 
 stream_1 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Tiêu đề:</b> <a href={0}>{1}</a>\n<b>‣ Thời lượng:</b > {2} phút\n<b>‣ Được yêu cầu bởi:</b> {3}"
 stream_2 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Loại phát sóng:</b>Phát sóng trực tiếp [link]\n<b>‣ Được yêu cầu bởi:</b> {0}"
