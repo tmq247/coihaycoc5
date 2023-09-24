@@ -26,7 +26,7 @@ for filename in os.listdir(r"./strings/langs/"):
         )
         for item in languages["vn"]:
             if item not in languages[language_name]:
-                languages[language_name][item] = languages[vn"][item]
+                languages[language_name][item] = languages["vn"][item]
     try:
         languages_present[language_name] = languages[language_name]["name"]
     except:
