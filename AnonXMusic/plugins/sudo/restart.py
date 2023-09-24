@@ -49,7 +49,7 @@ async def update_(client, message, _):
         return await response.edit(_["server_4"])
     except InvalidGitRepositoryError:
         return await response.edit(_["server_5"])
-    to_exc = f"git tìm nạp nguồn gốc {config.UPSTREAM_BRANCH} &> /dev/null"
+    to_exc = f"git fetch origin {config.UPSTREAM_BRANCH} &> /dev/null"
     os.system(to_exc)
     await asyncio.sleep(7)
     verification = ""
