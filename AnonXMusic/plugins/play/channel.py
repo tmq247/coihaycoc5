@@ -8,7 +8,7 @@ from AnonXMusic.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
 
 
-@app.on_message(filters.command(["channelplay"]) & filters.group & ~BANNED_USERS)
+@app.on_message(filters.command(["lienketnhom"]) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def playmode_(client, message: Message, _):
     if len(message.command) < 2:
@@ -32,15 +32,15 @@ async def playmode_(client, message: Message, _):
             chat = await app.get_chat(query)
         except:
             return await message.reply_text(_["cplay_4"])
-        if chat.type != ChatType.CHANNEL:
+        if chat.type != ChatType.CHANNEL or ChatType.GROUP or ChatType.SUPERGROUP:
             return await message.reply_text(_["cplay_5"])
         try:
             async for user in app.get_chat_members(
-                chat.id, filter=ChatMembersFilter.ADMINISTRATORS
+                chat.id, filter=ChatMembersFilter.BOT
             ):
-                if user.status == ChatMemberStatus.OWNER:
-                    cusn = user.user.username
-                    crid = user.user.id
+                if user.status == ChatMemberStatus.MEMBER:
+                    cusn = message.from_user.username#user.user.username
+                    crid = message.from_user.id#user.user.id
         except:
             return await message.reply_text(_["cplay_4"])
         if crid != message.from_user.id:
