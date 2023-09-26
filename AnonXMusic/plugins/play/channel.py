@@ -2,7 +2,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter, ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from AnonXMusic import app
+from AnonXMusic import app, userbot
 from AnonXMusic.utils.database import set_cmode
 from AnonXMusic.utils.decorators.admins import AdminActual
 from config import BANNED_USERS
@@ -29,13 +29,13 @@ async def playmode_(client, message: Message, _):
             return await message.reply_text(_["cplay_2"])
     else:
         try:
-            chat = await app.get_chat(query)
+            chat = await userbot.get_chat(query)
         except:
             return await message.reply_text(_["cplay_4"])
         if chat.type != ChatType.SUPERGROUP:
             return await message.reply_text(_["cplay_5"])
         try:
-            async for user in app.get_chat_members(
+            async for user in userbot.get_chat_members(
                 chat.id, filter=ChatMembersFilter.RECENT
             ):
                 if user.status == ChatMemberStatus.MEMBER:
