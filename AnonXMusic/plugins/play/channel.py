@@ -35,7 +35,7 @@ async def playmode_(client, message: Message, _):
         if chat.type != ChatType.SUPERGROUP:
             return await message.reply_text(_["cplay_5"])
         try:
-            async for user in userbot.get_chat_members(
+            async for user in app.get_chat_members(
                 chat.id, filter=ChatMembersFilter.RECENT
             ):
                 if user.status == ChatMemberStatus.MEMBER:
