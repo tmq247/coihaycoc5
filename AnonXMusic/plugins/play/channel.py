@@ -9,7 +9,7 @@ from config import BANNED_USERS
 
 
 @app.on_message(filters.command(["lienketnhom"]) & filters.group & ~BANNED_USERS)
-#@AdminActual
+@AdminActual
 async def playmode_(client, message: Message, _):
     if len(message.command) < 2:
         return await message.reply_text(_["cplay_1"].format(message.chat.title))
