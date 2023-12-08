@@ -404,6 +404,11 @@ class Call(PyTgCalls):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             elif "vid_" in queued:
@@ -451,6 +456,11 @@ class Call(PyTgCalls):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
             elif "index_" in queued:
@@ -510,6 +520,11 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
+                    await asyncio.sleep(30)
+                    await app.delete_messages(
+                    chat_id=chat_id,
+                    message_ids=run.id,
+                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
                 elif videoid == "soundcloud":
@@ -522,6 +537,11 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
+                    await asyncio.sleep(30)
+                    await app.delete_messages(
+                    chat_id=chat_id,
+                    message_ids=run.id,
+                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
                 else:
@@ -538,6 +558,11 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
+                    await asyncio.sleep(30)
+                    await app.delete_messages(
+                    chat_id=chat_id,
+                    message_ids=run.id,
+                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "stream"
 
