@@ -111,6 +111,11 @@ async def stream(
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
         if count == 0:
@@ -197,6 +202,11 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
     elif streamtype == "soundcloud":
@@ -247,6 +257,11 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
     elif streamtype == "telegram":
@@ -299,6 +314,11 @@ async def stream(
                 caption=_["stream_1"].format(link, title[:23], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
     elif streamtype == "live":
@@ -365,6 +385,11 @@ async def stream(
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
     elif streamtype == "index":
