@@ -91,17 +91,6 @@ start_4 : "🎄 <b>Yêu cầu siêu nhóm</b> 🎄\n\nVui lòng chuyển đổi 
 start_5 : "<b>↝ Trò chuyện bị liệt vào danh sách đen ↜</b>\n\nCuộc trò chuyện này được liệt kê trong cơ sở dữ liệu {0} dưới dạng cuộc trò chuyện bị đưa vào danh sách đen.\nĐã áp dụng yêu cầu tới người dùng <a href={1}>sudo</a> để xóa cuộc trò chuyện khỏi danh sách đen hoặc truy cập <a href={2}>Trò chuyện hỗ trợ.</a>"
 start_6 : "😲 <b>Thông tin clip</b> 😲\n\nstitute <b>Tiêu đề:</b> {0}\n\n⏳ <b>Thời lượng:</b> {1} phút\n👀 < b>Lượt xem:</b> <code>{2</code>\n⏰ <b>Đã đăng trong:</b> {3}\n📎 <b>Kênh:</b> <a href= {4}>{5</a>\n\n<u><b>🥀 Nghiên cứu được hỗ trợ bởi {6</b></u>"
 
-queue_1 : "» Đang tìm nạp hàng đợi...\n\nXin vui lòng đợi..."
-queue_2 : "» Danh sách chờ trống rỗng."
-queue_3 : "<u>» Nhấp vào đây để kiểm tra danh sách các clip đang chờ xử lý:</u> <a href={0}>tại đây</a>"
-queue_4 : "➲ <b>Đã thêm vào danh sách chờ tại địa điểm #{0}\n\n‣ Địa chỉ:</b> {1}\n<b>‣ Thời lượng:</b> {2} phút\n<b> ‣ Yêu cầu bởi:</b>{3}"
-queue_5 : "Chỉ có một clip trong hàng đợi.\n\nThêm các clip khác để kiểm tra danh sách."
-queue_6 : "<b>🕚 Thời lượng:</b> Không xác định thời lượng phát trực tuyến\n\nNhấp vào nút bên dưới để xem hàng đợi đầy đủ."
-queue_7 : "\nNhấp vào nút bên dưới để xem danh sách chờ đầy đủ."
-queue_8 : "<b>Người chơi {0}</b>\n\n🎄 <b>Hiện đang phát trực tuyến cho :</b> {1}\n\n🔗 <b>Loại luồng:</b> {2}\n 🥀 <b>Người yêu cầu:</b> {3}\n{4}"
-
-stream_1 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Tiêu đề:</b> <a href={0}>{1}</a>\n<b>‣ Thời lượng:</b > {2} phút\n<b>‣ Được yêu cầu bởi:</b> {3}"
-stream_2 : "➲ <b>Bắt đầu phát sóng |</b>\n\n<b>‣ Loại phát sóng:</b>Phát sóng trực tiếp [link]\n<b>‣ Được yêu cầu bởi:</b> {0}"
 
 help_1 : "Chọn danh mục mà bạn muốn trợ giúp.\nHỏi về khiếu nại của bạn trong <a href={0}>Trò chuyện hỗ trợ</a>\n\nTất cả các lệnh có thể được sử dụng với: <code>/</code>"
 help_2 : "Nhấp vào nút bên dưới để nhận menu trợ giúp trong tin nhắn riêng tư của bạn."
