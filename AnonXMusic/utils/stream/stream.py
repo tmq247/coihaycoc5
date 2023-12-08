@@ -162,11 +162,16 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            dsach = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=dsach.id,
+            revoke=True,)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -227,11 +232,16 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            dsach = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=dsach.id,
+            revoke=True,)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -284,11 +294,16 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            dsach = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=dsach.id,
+            revoke=True,)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -342,11 +357,16 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await app.send_message(
+            dsach = await app.send_message(
                 chat_id=original_chat_id,
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=dsach.id,
+            revoke=True,)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -409,10 +429,15 @@ async def stream(
             )
             position = len(db.get(chat_id)) - 1
             button = aq_markup(_, chat_id)
-            await mystic.edit_text(
+            dsach = await mystic.edit_text(
                 text=_["queue_4"].format(position, title[:27], duration_min, user_name),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(15)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=dsach.id,
+            revoke=True,)
         else:
             if not forceplay:
                 db[chat_id] = []
