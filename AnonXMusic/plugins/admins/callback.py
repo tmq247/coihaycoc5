@@ -237,6 +237,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
@@ -273,6 +278,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
+            await asyncio.sleep(30)
+            await app.delete_messages(
+            chat_id=chat_id,
+            message_ids=run.id,
+            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
             await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
@@ -316,6 +326,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             elif videoid == "soundcloud":
@@ -329,6 +344,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
             else:
@@ -344,6 +364,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
+                await asyncio.sleep(30)
+                await app.delete_messages(
+                chat_id=chat_id,
+                message_ids=run.id,
+                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
             await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
