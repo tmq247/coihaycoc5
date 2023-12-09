@@ -404,13 +404,10 @@ class Call(PyTgCalls):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(30)
-                await app.delete_messages(
-                chat_id=chat_id,
-                message_ids=run.id,
-                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
             elif "vid_" in queued:
                 mystic = await app.send_message(original_chat_id, _["call_7"])
                 try:
@@ -456,13 +453,10 @@ class Call(PyTgCalls):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(30)
-                await app.delete_messages(
-                chat_id=chat_id,
-                message_ids=run.id,
-                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
             elif "index_" in queued:
                 stream = (
                     AudioVideoPiped(
@@ -489,6 +483,8 @@ class Call(PyTgCalls):
                 )
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
             else:
                 if video:
                     stream = AudioVideoPiped(
@@ -520,13 +516,10 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
-                    await asyncio.sleep(30)
-                    await app.delete_messages(
-                    chat_id=chat_id,
-                    message_ids=run.id,
-                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
+                    await asyncio.sleep(30)
+                    await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
                 elif videoid == "soundcloud":
                     button = stream_markup(_, chat_id)
                     run = await app.send_photo(
@@ -537,13 +530,10 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
-                    await asyncio.sleep(30)
-                    await app.delete_messages(
-                    chat_id=chat_id,
-                    message_ids=run.id,
-                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "tg"
+                    await asyncio.sleep(30)
+                    await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
                 else:
                     img = await get_thumb(videoid)
                     button = stream_markup(_, chat_id)
@@ -558,13 +548,10 @@ class Call(PyTgCalls):
                         ),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
-                    await asyncio.sleep(30)
-                    await app.delete_messages(
-                    chat_id=chat_id,
-                    message_ids=run.id,
-                    revoke=True,)
                     db[chat_id][0]["mystic"] = run
                     db[chat_id][0]["markup"] = "stream"
+                    await asyncio.sleep(30)
+                    await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
 
     async def ping(self):
         pings = []
