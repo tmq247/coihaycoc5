@@ -237,14 +237,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            await asyncio.sleep(30)
-            await app.delete_messages(
-            chat_id=chat_id,
-            message_ids=run.id,
-            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-            await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
+            await asyncio.sleep(30)
+            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            #await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
         elif "vid_" in queued:
             mystic = await CallbackQuery.message.reply_text(
                 _["call_7"], disable_web_page_preview=True
@@ -278,15 +275,12 @@ async def del_back_playlist(client, CallbackQuery, _):
                 ),
                 reply_markup=InlineKeyboardMarkup(button),
             )
-            await asyncio.sleep(30)
-            await app.delete_messages(
-            chat_id=chat_id,
-            message_ids=run.id,
-            revoke=True,)
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
-            await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
+            #await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
             await mystic.delete()
+            await asyncio.sleep(30)
+            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
         elif "index_" in queued:
             try:
                 await Anony.skip_stream(chat_id, videoid, video=status)
@@ -300,7 +294,9 @@ async def del_back_playlist(client, CallbackQuery, _):
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
-            await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
+            await asyncio.sleep(30)
+            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            #await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
         else:
             if videoid == "telegram":
                 image = None
@@ -326,13 +322,10 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(30)
-                await app.delete_messages(
-                chat_id=chat_id,
-                message_ids=run.id,
-                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
             elif videoid == "soundcloud":
                 button = stream_markup(_, chat_id)
                 run = await CallbackQuery.message.reply_photo(
@@ -344,13 +337,10 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(30)
-                await app.delete_messages(
-                chat_id=chat_id,
-                message_ids=run.id,
-                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "tg"
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
             else:
                 button = stream_markup(_, chat_id)
                 img = await get_thumb(videoid)
@@ -364,14 +354,11 @@ async def del_back_playlist(client, CallbackQuery, _):
                     ),
                     reply_markup=InlineKeyboardMarkup(button),
                 )
-                await asyncio.sleep(30)
-                await app.delete_messages(
-                chat_id=chat_id,
-                message_ids=run.id,
-                revoke=True,)
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
-            await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
+                await asyncio.sleep(30)
+                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            #await CallbackQuery.edit_message_text(txt, reply_markup=close_markup(_))
 
 
 async def markup_timer():
