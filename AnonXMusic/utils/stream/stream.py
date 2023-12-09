@@ -114,7 +114,7 @@ async def stream(
                 db[chat_id][0]["mystic"] = run
                 db[chat_id][0]["markup"] = "stream"
                 await asyncio.sleep(30)
-                await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+                await app.delete_messages(chat_id, run.id)
         if count == 0:
             return
         else:
@@ -165,7 +165,7 @@ async def stream(
                 reply_markup=InlineKeyboardMarkup(button),
             )
             await asyncio.sleep(15)
-            await app.delete_messages(chat_id=chat_id, message_id=dsach.id, revoke=True,)
+            await app.delete_messages(chat_id, dsach.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -204,7 +204,7 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
     elif streamtype == "soundcloud":
         file_path = result["filepath"]
         title = result["title"]
@@ -229,7 +229,7 @@ async def stream(
                 reply_markup=InlineKeyboardMarkup(button),
             )
             await asyncio.sleep(15)
-            await app.delete_messages(chat_id=chat_id, message_id=dsach.id, revoke=True,)
+            await app.delete_messages(chat_id, dsach.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -258,7 +258,7 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
     elif streamtype == "telegram":
         file_path = result["path"]
         link = result["link"]
@@ -285,7 +285,7 @@ async def stream(
                 reply_markup=InlineKeyboardMarkup(button),
             )
             await asyncio.sleep(15)
-            await app.delete_messages(chat_id=chat_id, message_ids=dsach.id, revoke=True,)
+            await app.delete_messages(chat_id, dsach.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -314,7 +314,7 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
     elif streamtype == "live":
         link = result["link"]
         vidid = result["vidid"]
@@ -342,7 +342,7 @@ async def stream(
                 reply_markup=InlineKeyboardMarkup(button),
             )
             await asyncio.sleep(15)
-            await app.delete_messages(chat_id=chat_id, message_id=dsach.id, revoke=True,)
+            await app.delete_messages(chat_id, dsach.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -384,7 +384,7 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
     elif streamtype == "index":
         link = result
         title = "ɪɴᴅᴇx ᴏʀ ᴍ3ᴜ8 ʟɪɴᴋ"
@@ -407,7 +407,7 @@ async def stream(
                 reply_markup=InlineKeyboardMarkup(button),
             )
             await asyncio.sleep(15)
-            await app.delete_messages(chat_id=chat_id, message_id=dsach.id, revoke=True,)
+            await app.delete_messages(chat_id, dsach.id)
         else:
             if not forceplay:
                 db[chat_id] = []
@@ -439,4 +439,4 @@ async def stream(
             db[chat_id][0]["markup"] = "tg"
             await mystic.delete()
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
