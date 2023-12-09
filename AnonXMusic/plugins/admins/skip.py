@@ -129,7 +129,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["mystic"] = run
         db[chat_id][0]["markup"] = "tg"
         await asyncio.sleep(30)
-        await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+        await app.delete_messages(chat_id, run.id)
     elif "vid_" in queued:
         mystic = await message.reply_text(_["call_7"], disable_web_page_preview=True)
         try:
@@ -165,7 +165,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["markup"] = "stream"
         await mystic.delete()
         await asyncio.sleep(30)
-        await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+        await app.delete_messages(chat_id, run.id)
     elif "index_" in queued:
         try:
             await Anony.skip_stream(chat_id, videoid, video=status)
@@ -180,7 +180,7 @@ async def skip(cli, message: Message, _, chat_id):
         db[chat_id][0]["mystic"] = run
         db[chat_id][0]["markup"] = "tg"
         await asyncio.sleep(30)
-        await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+        await app.delete_messages(chat_id, run.id)
     else:
         if videoid == "telegram":
             image = None
@@ -209,7 +209,7 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
         elif videoid == "soundcloud":
             button = stream_markup(_, chat_id)
             run = await message.reply_photo(
@@ -224,7 +224,7 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
         else:
             button = stream_markup(_, chat_id)
             img = await get_thumb(videoid)
@@ -241,4 +241,4 @@ async def skip(cli, message: Message, _, chat_id):
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
             await asyncio.sleep(30)
-            await app.delete_messages(chat_id=chat_id, message_id=run.id, revoke=True,)
+            await app.delete_messages(chat_id, run.id)
