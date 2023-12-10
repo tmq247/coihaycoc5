@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
-
+import asyncio
 import config
 from AnonXMusic import YouTube, app
 from AnonXMusic.core.call import Anony
@@ -240,3 +240,5 @@ async def skip(cli, message: Message, _, chat_id):
             )
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "stream"
+            await asyncio.sleep(30)
+            await app.delete_messages(chat_id, run.id)
