@@ -94,7 +94,6 @@ async def close_menu(_, CallbackQuery):
         dong = await CallbackQuery.message.reply_text(
             f"Đã đóng bởi : {CallbackQuery.from_user.mention}"
         )
-        await mystic.delete()
         await asyncio.sleep(10)
         await app.delete_messages(chat_id, dong.id)
     except:
